@@ -1,0 +1,15 @@
+body{
+    background-color: lightblue;
+}
+.nav-item{
+    margin-right: 2px;
+    padding: 2px;
+}
+img{
+    height:200px;
+    width:200px;
+    
+}
+.head3{
+    color: red;
+}

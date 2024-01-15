@@ -1,0 +1,21 @@
+.labels{
+    text-align: center;
+    text-decoration: solid;
+    font-family: 'Roboto';
+    font-size: 15px;
+}
+
+/* .form{
+    margin:10px;
+    text-align: center;
+    background-color: pink;
+    height: 220px;
+    width:200px;
+
+} */
+
+
+.btn{
+    margin:15px;
+    height:40px;
+}

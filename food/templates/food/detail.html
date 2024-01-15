@@ -1,0 +1,25 @@
+{% extends 'food/base.html' %}
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Detailed</title>
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{item.item_image}}" class="card"/>
+            </div>
+            <div class="col-md-6">
+                <h1>{{item.item_name}}</h1>
+                <h1>{{item.item_desc}}</h1>
+                <h1>${{item.item_price}}</h1>
+                <a href="{% url 'food:delete_item' item.id %}"><button class="btn btn-danger">Delete Item</button></a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

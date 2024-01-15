@@ -1,0 +1,45 @@
+{% extends 'food/base.html' %}
+<!-- {% load static %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="{% static 'food/style.css' %}">
+    <title>Document2</title>
+</head>
+<body>
+    {% block body %}
+    {% for item in item_list %}
+        <div class="row">
+            <div class="col-md-3 offset-md-1">
+                <img class="card" src="{{item.item_image}}"/>
+            </div>
+            <div class="col-md-3 ">
+                <h3 class="head3">{{ item.item_name }}</h3>
+                <h3>{{ item.item_desc }}</h3>
+                <h3>{{ item.item_price }}</h3>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'food:detail' item.id %}"><button class="btn btn-success">Details</button></a>
+            </div>
+        </div>
+
+    {% endfor %}
+    {% endblock %}    
+
+
+    <ul>
+        {% for item in item_list %}
+        <li>
+            <!-- <a href="/food/{{item.id}}/">{{item.id}}-- {{item.item_name}}</a> -->
+            <a href="{%  url 'food:detail' item.id %}">{{item.id}}--{{item.item_name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

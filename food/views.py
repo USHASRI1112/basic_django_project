@@ -50,7 +50,7 @@ def create_item(request):
 #class based view for create item
 class CreateItem(CreateView):
     model = Item 
-    fields = ['item_name','item_desc','item_price','item_image']
+    fields = ['item_name','item_desc','item_price','item_image','item_username']
     template_name = 'food/item-form.html'
 
     def form_valid(self,form):

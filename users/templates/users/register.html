@@ -1,3 +1,4 @@
+{% extends 'food/base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +12,37 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="form">
-    <form method="POST">
-        {% csrf_token %}
-            <!-- <label class="labels">USERNAME:</label>
-            {{ form.username }}
-            <br>
-            <label class="labels">PASSWORD:</label>
-            {{ form.password1 }}
-            <br>
-            <label class="labels">CONFIRM PASSWORD:</label>
-            {{ form.password2 }} -->
-            {{form}}
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </form>
-</div>
+    {% block body %}
+    <div class="container d-flex flex-column justify-content-center ">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card mt-5">
+                    <div class="class-header text-white bg-info">
+                        <div class="class-title m-4">
+                            Register
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="m-4">
+                                    <p class="fieldname" style="text-transform: uppercase;">{{field.name}}:</p>
+                                    {{field}}
+                                </div>
+                            {% endfor %}
+                            <!-- {{ form }} -->
+                            <div class="ml-5 button1" style="margin-left: 24px;">
+                                <button class="btn btn-primary" type="submit">Sign UP</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+
 </body>
 </html>

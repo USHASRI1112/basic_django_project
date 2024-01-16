@@ -13,3 +13,9 @@ img{
 .head3{
     color: red;
 }
+.fieldname{
+    text-transform: uppercase;
+}
+.button{
+    margin-left:29px;
+}
